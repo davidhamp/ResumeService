@@ -1,0 +1,22 @@
+{
+    "name": "DH/ResumeService",
+    "type": "service",
+    "description": "Resume management and retrieval service",
+    "keywords": ["resume", "service", "php"],
+    "homepage": "http://www.davidhamp.net",
+    "license" : "MIT License",
+    "authors": [
+        {
+            "name": "David Hamp",
+            "email": "david.hamp@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">5.4",
+        "mustache/mustache": "trunk",
+        "symfony/yaml": "2.*",
+    },
+    "autoload": {
+        "psr-4": {"SPF\\": "src/"}
+    }
+}
