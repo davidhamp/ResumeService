@@ -1,5 +1,5 @@
 {
-    "name": "davidhamp/ResumeService",
+    "name": "DH/ResumeService",
     "type": "service",
     "description": "Resume management and retrieval service",
     "keywords": ["resume", "service", "php"],
@@ -13,13 +13,13 @@
     ],
     "repositories": [
         {
-            "type": "vcs",
+            "type": "git",
             "url": "https://github.com/davidhamp/Spiffy"
         }
     ],
     "require": {
         "php": ">5.4",
-        "Spiffy": "trunk"
+        "DH/Spiffy": "master"
     },
     "autoload": {
         "psr-4": {"SPF\\": "src/"}
