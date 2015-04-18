@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">5.4",
-        "davidhamp/Spiffy": "trunk"
+        "Spiffy": "trunk"
     },
     "autoload": {
         "psr-4": {"SPF\\": "src/"}
