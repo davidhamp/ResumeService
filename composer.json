@@ -1,5 +1,5 @@
 {
-    "name": "DH/ResumeService",
+    "name": "davidhamp/ResumeService",
     "type": "service",
     "description": "Resume management and retrieval service",
     "keywords": ["resume", "service", "php"],
@@ -11,10 +11,15 @@
             "email": "david.hamp@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/davidhamp/Spiffy"
+        }
+    ],
     "require": {
         "php": ">5.4",
-        "mustache/mustache": "trunk",
-        "symfony/yaml": "2.*",
+        "davidhamp/Spiffy": "trunk"
     },
     "autoload": {
         "psr-4": {"SPF\\": "src/"}
