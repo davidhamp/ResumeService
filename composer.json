@@ -1,5 +1,5 @@
 {
-    "name": "DH/ResumeService",
+    "name": "dh/ResumeService",
     "type": "service",
     "description": "Resume management and retrieval service",
     "keywords": ["resume", "service", "php"],
@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">5.4",
-        "DH/Spiffy": "dev-master"
+        "dh/Spiffy": "dev-master"
     },
     "autoload": {
         "psr-4": {"SPF\\": "src/"}
