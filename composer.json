@@ -22,6 +22,6 @@
         "dh/Spiffy": "dev-master"
     },
     "autoload": {
-        "psr-4": {"SPF\\": "src/"}
+        "psr-4": {"SPF\\": "SPF/"}
     }
 }
