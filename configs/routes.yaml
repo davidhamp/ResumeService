@@ -1,0 +1,9 @@
+'/test/':
+    controller: 'ResumeService\Controllers\TestController'
+    method:     'TestMethod'
+    options:
+        option1:  'Value1'
+
+'/test/testtwo/':
+    controller: 'ResumeService\Controllers\TestController'
+    method:     'TestMethod2'
