@@ -1,9 +1,133 @@
-'/test/':
-    controller: 'ResumeService\Controllers\TestController'
-    method:     'TestMethod'
-    options:
-        option1:  'Value1'
+# GET
+'/api/':
+    controller: 'ResumeService\Controllers\Schema'
+    method:     'api'
+    requestMethod: 'GET'
+    contentType: 'application/json'
+    description: 'Gets a list of all api end-points'
+'/api/resumes/':
+    controller: 'ResumeService\Controllers\Read'
+    method: listPeople
+    requestMethod: 'GET'
+    contentType: 'application/json'
+    description: 'Gets a list of all preople in the db'
+'/api/resumes/:personId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getResume
+    requestMethod: 'GET'
+    contentType: 'application/json'
+    description: 'Get a full resume'
+'/api/resumes/:personId/content/':
+    controller: 'ResumeService\Controllers\Read'
+    method: getContents
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/content/:contentId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getContentItem
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/education/':
+    controller: 'ResumeService\Controllers\Read'
+    method: getEducation
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/education/:educationId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getEducationItem
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/experience/':
+    controller: 'ResumeService\Controllers\Read'
+    method: getExperiences
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/experience/:experienceId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getExperienceItem
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/skills/':
+    controller: 'ResumeService\Controllers\Read'
+    method: getSkills
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/skills/:skillId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getSkillItem
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/social/':
+    controller: 'ResumeService\Controllers\Read'
+    method: getSocialLinks
+    requestMethod: 'GET'
+    contentType: 'application/json'
+'/api/resumes/:personId/social/:socialLinkId':
+    controller: 'ResumeService\Controllers\Read'
+    method: getSocialLinkItem
+    requestMethod: 'GET'
+    contentType: 'application/json'
 
-'/test/testtwo/':
-    controller: 'ResumeService\Controllers\TestController'
-    method:     'TestMethod2'
+
+# POST
+'/api/resumes/:personId':
+    controller: 'ResumeService\Controllers\Write'
+    method: addPerson
+    requestMethod: 'POST'
+    contentType: 'application/json'
+'/api/resumes/:personId/content':
+    controller: 'ResumeService\Controllers\Write'
+    method: addContent
+    requestMethod: 'POST'
+    contentType: 'application/json'
+'/api/resumes/:personId/education':
+    controller: 'ResumeService\Controllers\Write'
+    method: addEducation
+    requestMethod: 'POST'
+    contentType: 'application/json'
+'/api/resumes/:personId/experience':
+    controller: 'ResumeService\Controllers\Write'
+    method: addExperience
+    requestMethod: 'POST'
+    contentType: 'application/json'
+'/api/resumes/:personId/skills':
+    controller: 'ResumeService\Controllers\Write'
+    method: addSkill
+    requestMethod: 'POST'
+    contentType: 'application/json'
+'/api/resumes/:personId/social':
+    controller: 'ResumeService\Controllers\Write'
+    method: addSocialLink
+    requestMethod: 'POST'
+    contentType: 'application/json'
+
+# PUT
+'/api/resumes/:personId/content/:contentId':
+    controller: 'ResumeService\Controllers\Update'
+    method: updateContent
+    requestMethod: 'PUT'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/education/:educationId':
+    controller: 'ResumeService\Controllers\Update'
+    method: updateEducation
+    requestMethod: 'PUT'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/experience/:experienceId':
+    controller: 'ResumeService\Controllers\Update'
+    method: updateExperience
+    requestMethod: 'PUT'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/skills/:skillsId':
+    controller: 'ResumeService\Controllers\Update'
+    method: updateSkill
+    requestMethod: 'PUT'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/social/:socialId':
+    controller: 'ResumeService\Controllers\Update'
+    method: updateSocialLink
+    requestMethod: 'PUT'
+    contentType: 'application/json'
