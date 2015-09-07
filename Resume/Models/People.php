@@ -23,6 +23,10 @@ class People extends Model
 
     public $phone_number;
 
+    public $email;
+
+    public $url;
+
     public $public;
 
 }

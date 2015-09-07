@@ -68,7 +68,6 @@
     requestMethod: 'GET'
     contentType: 'application/json'
 
-
 # POST
 '/api/resumes/:personId':
     controller: 'ResumeService\Controllers\Write'
@@ -130,4 +129,61 @@
     controller: 'ResumeService\Controllers\Update'
     method: updateSocialLink
     requestMethod: 'PUT'
+    contentType: 'application/json'
+
+# DELETE
+'/api/resumes/:personId/content/:contentId':
+    controller: 'ResumeService\Controllers\Delete'
+    method: deleteContent
+    requestMethod: 'DELETE'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/education/:educationId':
+    controller: 'ResumeService\Controllers\Delete'
+    method: deleteEducation
+    requestMethod: 'DELETE'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/experience/:experienceId':
+    controller: 'ResumeService\Controllers\Delete'
+    method: deleteExperience
+    requestMethod: 'DELETE'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/skills/:skillsId':
+    controller: 'ResumeService\Controllers\Delete'
+    method: deleteSkill
+    requestMethod: 'DELETE'
+    contentType: 'application/json'
+
+'/api/resumes/:personId/social/:socialId':
+    controller: 'ResumeService\Controllers\Delete'
+    method: deleteSocialLink
+    requestMethod: 'DELETE'
+    contentType: 'application/json'
+
+
+# Administration end points
+'/admin/content_types/':
+    controller: 'ResumeService\Controllers\Admin'
+    method: getContentTypes
+    requestMethod: 'GET'
+    contentType: 'application/json'
+
+'/admin/content_types/':
+    controller: 'ResumeService\Controllers\Admin'
+    method: addContentType
+    requestMethod: 'POST'
+    contentType: 'application/json'
+
+'/admin/content_types/:contentId':
+    controller: 'ResumeService\Controllers\Admin'
+    method: updateContentType
+    requestMethod: 'PUT'
+    contentType: 'application/json'
+
+'/admin/content_types/:contentId/delete':
+    controller: 'ResumeService\Controllers\Admin'
+    method: deleteContentType
+    requestMethod: 'DELETE'
     contentType: 'application/json'

@@ -63,9 +63,9 @@ class Read extends Controller
 
         $out = array();
 
-        for ($i = 0; $i < 5; $i++) {
-            $collectionClass = 'ResumeService\\Models\\' . $collectionType[$i];
-            $out[$collectionType[$i]] = new Collection($sproc->fetchAll(PDO::FETCH_ASSOC), $collectionClass);
+        foreach ($collectionType as $type) {
+            $collectionClass = 'ResumeService\\Models\\' . $type;
+            $out[$type] = new Collection($sproc->fetchAll(PDO::FETCH_ASSOC), $collectionClass);
 
             $sproc->nextRowset();
         }
@@ -100,7 +100,8 @@ class Read extends Controller
      */
     public function getContentItem()
     {
-        $data = $this->db->prepare('SELECT * FROM ResumeService.Content WHERE person_id = :contentId');
+        $data = $this->db->prepare('SELECT * FROM ResumeService.Content WHERE id = :contentId AND person_id = :personId');
+        $data->bindParam('personId', $this->params['personId'], PDO::PARAM_INT);
         $data->bindParam('contentId', $this->params['contentId'], PDO::PARAM_INT);
         $data->execute();
 
@@ -134,7 +135,7 @@ class Read extends Controller
      */
     public function getEducationItem()
     {
-        $data = $this->db->prepare('SELECT * FROM ResumeService.Education WHERE person_id = :educationId');
+        $data = $this->db->prepare('SELECT * FROM ResumeService.Education WHERE id = :educationId AND person_id = :personId');
         $data->bindParam('educationId', $this->params['educationId'], PDO::PARAM_INT);
         $data->execute();
 
@@ -202,7 +203,8 @@ class Read extends Controller
      */
     public function getSkillItem()
     {
-        $data = $this->db->prepare('SELECT * FROM ResumeService.Skills WHERE person_id = :skillId');
+        $data = $this->db->prepare('SELECT * FROM ResumeService.Skills WHERE id = :skillId AND person_id = :personId');
+        $data->bindParam('personId', $this->params['personId'], PDO::PARAM_INT);
         $data->bindParam('skillId', $this->params['skillId'], PDO::PARAM_INT);
         $data->execute();
 
@@ -236,14 +238,12 @@ class Read extends Controller
      */
     public function getSocialLinkItem()
     {
-        $data = $this->db->prepare('SELECT * FROM ResumeService.Social WHERE person_id = :socialId');
+        $data = $this->db->prepare('SELECT * FROM ResumeService.Social WHERE id = :socialId AND person_id = :personId');
+        $data->bindParam('personId', $this->params['personId'], PDO::PARAM_INT);
         $data->bindParam('socialId', $this->params['socialId'], PDO::PARAM_INT);
         $data->execute();
 
         $this->setModel(new Collection($data->fetchAll(PDO::FETCH_ASSOC), 'ResumeService\Models\Social'));
     }
-
-
-
 
 }
