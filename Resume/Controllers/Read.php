@@ -8,6 +8,13 @@ use SPF\Dependency\Constants;
 use \PDO;
 use SPF\Models\Collection;
 
+use ResumeService\Models\Content;
+use ResumeService\Models\Education;
+use ResumeService\Models\Experience;
+use ResumeService\Models\Person;
+use ResumeService\Models\Skills;
+use ResumeService\Models\Social;
+
 class Read extends Controller
 {
 
@@ -19,7 +26,7 @@ class Read extends Controller
      * @method __construct
      * @dmManaged
      */
-    public function __construct($options = array())
+    public function __construct()
     {
         $this->db = DependencyManager::get(Constants::DATABASE)->getMysqlConnection();
     }
@@ -53,19 +60,18 @@ class Read extends Controller
         $sproc->execute();
 
         $collectionType = array(
-            'Person',
-            'Content',
-            'Education',
-            'Experience',
-            'Skills',
-            'Social'
+            'content',
+            'education',
+            'experience',
+            'skills',
+            'social'
         );
 
-        $out = array();
+        $out = array('profile' => $sproc->fetchAll(PDO::FETCH_CLASS, 'ResumeService\\Models\\Person')[0]);
+        $sproc->nextRowset();
 
         foreach ($collectionType as $type) {
-            $collectionClass = 'ResumeService\\Models\\' . $type;
-            $out[$type] = new Collection($sproc->fetchAll(PDO::FETCH_ASSOC), $collectionClass);
+            $out[$type] = $sproc->fetchAll(PDO::FETCH_CLASS, 'ResumeService\\Models\\' . ucfirst($type));
 
             $sproc->nextRowset();
         }

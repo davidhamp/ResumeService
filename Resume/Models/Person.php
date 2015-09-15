@@ -4,9 +4,11 @@ namespace ResumeService\Models;
 
 use SPF\Model;
 
-class People extends Model
+class Person extends Model
 {
-
+    /**
+     * @SPF\JsonIgnore
+     */
     public $id;
 
     public $first_name;
@@ -27,6 +29,9 @@ class People extends Model
 
     public $url;
 
+    /**
+     * @SPF\JsonIgnore
+     */
     public $public;
 
 }

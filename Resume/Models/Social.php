@@ -7,8 +7,14 @@ use SPF\Model;
 class Social extends Model
 {
 
+    /**
+     * @SPF\JsonIgnore
+     */
     public $id;
 
+    /**
+     * @SPF\JsonIgnore
+     */
     public $person_id;
 
     public $type;

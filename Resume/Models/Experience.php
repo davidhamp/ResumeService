@@ -7,8 +7,14 @@ use SPF\Model;
 class Experience extends Model
 {
 
+    /**
+     * @SPF\JsonIgnore
+     */
     public $id;
 
+    /**
+     * @SPF\JsonIgnore
+     */
     public $person_id;
 
     public $start_date;
