@@ -8,12 +8,12 @@ class Experience extends Model
 {
 
     /**
-     * @SPF\JsonIgnore
+     * @SPF:JsonIgnore
      */
     public $id;
 
     /**
-     * @SPF\JsonIgnore
+     * @SPF:JsonIgnore
      */
     public $person_id;
 

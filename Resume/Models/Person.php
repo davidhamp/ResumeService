@@ -7,7 +7,7 @@ use SPF\Model;
 class Person extends Model
 {
     /**
-     * @SPF\JsonIgnore
+     * @SPF:JsonIgnore
      */
     public $id;
 
@@ -30,7 +30,7 @@ class Person extends Model
     public $url;
 
     /**
-     * @SPF\JsonIgnore
+     * @SPF:JsonIgnore
      */
     public $public;
 
